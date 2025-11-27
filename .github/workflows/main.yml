@@ -29,16 +29,16 @@ jobs:
       - name: Build and Push Backend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./FARM-SPRINGBOOT
-          file: ./FARM-SPRINGBOOT/backend.Dockerfile
+          context: ./farm-springboot
+          file: ./farm-springboot/backend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/FARM-SPRINGBOOT:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/farm-springboot:latest
 
       # Step 5 — Build & Push Frontend Image
       - name: Build and Push Frontend Image
         uses: docker/build-push-action@v6
         with:
-          context: ./FARM-REACT
-          file: ./FARM-REACT/frontend.Dockerfile
+          context: ./farm-react
+          file: ./farm-react/frontend.Dockerfile
           push: true
-          tags: ${{ secrets.DOCKER_USERNAME }}/FARM-REACT:latest
+          tags: ${{ secrets.DOCKER_USERNAME }}/farm-react:latest
